@@ -1,0 +1,5216 @@
+{
+  "meta": {
+    "date": "2026-04-20",
+    "insider_count": 0,
+    "broker_count": 274,
+    "unified_count": 274
+  },
+  "data": [
+    {
+      "symbol": "BUMI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 394,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 394,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 158
+    },
+    {
+      "symbol": "BBRI",
+      "signal": "BROKER_DRIVEN",
+      "score": 182,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 182,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 73
+    },
+    {
+      "symbol": "BREN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 182,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 182,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 73
+    },
+    {
+      "symbol": "DSSA",
+      "signal": "BROKER_DRIVEN",
+      "score": 123,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 123,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 49
+    },
+    {
+      "symbol": "BIPI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 91,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 91,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 36
+    },
+    {
+      "symbol": "EMAS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 91,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 91,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 36
+    },
+    {
+      "symbol": "CUAN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 82,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 82,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 33
+    },
+    {
+      "symbol": "BRPT",
+      "signal": "BROKER_DRIVEN",
+      "score": 70,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 70,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 28
+    },
+    {
+      "symbol": "MDKA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 60,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 60,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 24
+    },
+    {
+      "symbol": "BBCA",
+      "signal": "BROKER_DRIVEN",
+      "score": 54,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 54,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 22
+    },
+    {
+      "symbol": "ANTM",
+      "signal": "BROKER_DRIVEN",
+      "score": 48,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 48,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 19
+    },
+    {
+      "symbol": "ASII",
+      "signal": "BROKER_DRIVEN",
+      "score": 46,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 46,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 18
+    },
+    {
+      "symbol": "PACK",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 45,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 45,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 18
+    },
+    {
+      "symbol": "PTRO",
+      "signal": "BROKER_DRIVEN",
+      "score": 39,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 39,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 16
+    },
+    {
+      "symbol": "ARKO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 38,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 38,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 15
+    },
+    {
+      "symbol": "KLBF",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 36,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 36,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 14
+    },
+    {
+      "symbol": "RATU",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 36,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 36,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 14
+    },
+    {
+      "symbol": "EXCL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 36,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 36,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 14
+    },
+    {
+      "symbol": "GOTO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 34,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 34,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 14
+    },
+    {
+      "symbol": "SIMP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 33,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 33,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 13
+    },
+    {
+      "symbol": "ADRO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 32,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 32,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 13
+    },
+    {
+      "symbol": "BBNI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 31,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 31,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "BULL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 31,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 31,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "TCPI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 31,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 31,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "BMRI",
+      "signal": "BROKER_DRIVEN",
+      "score": 29,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 29,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "UNTR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 29,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 29,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "TINS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 29,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 29,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "SUPA",
+      "signal": "BROKER_DRIVEN",
+      "score": 29,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 29,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "MEDC",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 29,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 29,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 12
+    },
+    {
+      "symbol": "ENRG",
+      "signal": "BROKER_DRIVEN",
+      "score": 28,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 28,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 11
+    },
+    {
+      "symbol": "CPIN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 27,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 27,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 11
+    },
+    {
+      "symbol": "ELTY",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 25,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 25,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 10
+    },
+    {
+      "symbol": "BUKA",
+      "signal": "BROKER_DRIVEN",
+      "score": 25,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 25,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 10
+    },
+    {
+      "symbol": "JPFA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 24,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 24,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 10
+    },
+    {
+      "symbol": "TPIA",
+      "signal": "BROKER_DRIVEN",
+      "score": 23,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 23,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "COCO",
+      "signal": "BROKER_DRIVEN",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "BNBR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "ESSA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "VKTR",
+      "signal": "BROKER_DRIVEN",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "CBDK",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "AKRA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 22,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 22,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 9
+    },
+    {
+      "symbol": "SINI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "INCO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "INDF",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "BAPA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "BUVA",
+      "signal": "BROKER_DRIVEN",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "MBMA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "HRTA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "TAPG",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "FORE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "EURO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "ASLI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "BTEK",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 21,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 21,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "TLKM",
+      "signal": "BROKER_DRIVEN",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "CDIA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "ICBP",
+      "signal": "BROKER_DRIVEN",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "RMKE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "PTBA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "NRCA",
+      "signal": "BROKER_DRIVEN",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "OASA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "DILD",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 20,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 20,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "AADI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "NCKL",
+      "signal": "BROKER_DRIVEN",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "ISAT",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "ADMR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "NICL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "KRAS",
+      "signal": "BROKER_DRIVEN",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "CASA",
+      "signal": "BROKER_DRIVEN",
+      "score": 19,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 19,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 8
+    },
+    {
+      "symbol": "BBTN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "AALI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "SCMA",
+      "signal": "BROKER_DRIVEN",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "HMSP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "ELSA",
+      "signal": "BROKER_DRIVEN",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "GJTL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "ITMG",
+      "signal": "BROKER_DRIVEN",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "SMRA",
+      "signal": "BROKER_DRIVEN",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "TBIG",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 18,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 18,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "BFIN",
+      "signal": "BROKER_DRIVEN",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "ARCI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "WMUU",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "PSAB",
+      "signal": "BROKER_DRIVEN",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "EMTK",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "WIFI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "KIJA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "TRIM",
+      "signal": "BROKER_DRIVEN",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "INDY",
+      "signal": "BROKER_DRIVEN",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "MAPA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "NIKL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "APIC",
+      "signal": "BROKER_DRIVEN",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "VICI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "ROTI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 17,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 17,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 7
+    },
+    {
+      "symbol": "DGWG",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PANI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "TKIM",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BRIS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BKSL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "LSIP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BSDE",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SMGR",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "DKFT",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BRMS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "TOBA",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "RMKO",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BJBR",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PADI",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "KETR",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BINA",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "RAJA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MNCN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PNLF",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SMAR",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "RSCH",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "STRK",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MKAP",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MDIA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SMMT",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "KPIG",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "STAA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "GIAA",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BMTR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "IATA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "APLN",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SSIA",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "CPRO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SOCI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "INDO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BSML",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MLPL",
+      "signal": "BROKER_DRIVEN",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MSJA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "IBOS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "NTBK",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 16,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 16,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "INKP",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BJTM",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "HRUM",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MORA",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SSMS",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "HOMI",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "DSNG",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SIDO",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "WBSA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "UVCR",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "LPKR",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "WMPP",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "JTPE",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "VTNY",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "HAJJ",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "IRSX",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BEEF",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "MINA",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "HATM",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PSKT",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "UNVR",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "DSFI",
+      "signal": "BROKER_DRIVEN",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "TMAS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "ACES",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BBHI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "VISI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 15,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 15,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PGAS",
+      "signal": "BROKER_DRIVEN",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "CITA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "GDYR",
+      "signal": "BROKER_DRIVEN",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "SMBR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "BOGA",
+      "signal": "BROKER_DRIVEN",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "STAR",
+      "signal": "BROKER_DRIVEN",
+      "score": 14,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 14,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 6
+    },
+    {
+      "symbol": "PGEO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BWPT",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "MSIN",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "PYFA",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "KAQI",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "GMFI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "PPRE",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "ARNA",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "RLCO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "FILM",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "ASSA",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "MAPI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BBSS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "JGLE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "AYAM",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "UCID",
+      "signal": "BROKER_DRIVEN",
+      "score": 13,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 13,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BNGA",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "HUMI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "DNET",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BBYB",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "IMPC",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "WINE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "CTRA",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "PSDN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "REAL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "MSTI",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "TEBE",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "OLIV",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "GZCO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "CARE",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "SICO",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BCAP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "SMSM",
+      "signal": "BROKER_DRIVEN",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "BDMN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 12,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 12,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 5
+    },
+    {
+      "symbol": "SRTG",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 11,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 11,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "SMIL",
+      "signal": "BROKER_DRIVEN",
+      "score": 11,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 11,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "BHAT",
+      "signal": "BROKER_DRIVEN",
+      "score": 11,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 11,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "MTEL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 11,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 11,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "TOTL",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "GGRM",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "BIKE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "IMJS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "KOTA",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "BAJA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "JATI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "AMRT",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "ASLC",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "UNSP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "TOWR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "PKPK",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "MBSS",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "SOFA",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "TSPC",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "PBSA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "PNBN",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "KING",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "MSIE",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "BNII",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "KBLI",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "DRMA",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "WINS",
+      "signal": "BROKER_DRIVEN",
+      "score": 10,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 10,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "INDS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "JARR",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "INTP",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "PTPW",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "NASI",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "TRUE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "JSMR",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "DMAS",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "VIVA",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "WIIM",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "TAYS",
+      "signal": "BROKER_DRIVEN",
+      "score": 9,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 9,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 4
+    },
+    {
+      "symbol": "MEGA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 8,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 8,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "INCF",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 8,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 8,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MGLV",
+      "signal": "BROKER_DRIVEN",
+      "score": 8,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 8,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "PSGO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 8,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 8,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "NISP",
+      "signal": "BROKER_DRIVEN",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "GULA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MEJA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "PIPA",
+      "signal": "BROKER_DRIVEN",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "KOKA",
+      "signal": "BROKER_DRIVEN",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "GRPM",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "SMDR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "NINE",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "ENZO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MYOR",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "LPLI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MTFN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MUTU",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "LABA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "ASRI",
+      "signal": "BROKER_DRIVEN",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MIDI",
+      "signal": "BROKER_DRIVEN",
+      "score": 7,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 7,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 3
+    },
+    {
+      "symbol": "MAIN",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "AGRO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "NANO",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "SGRO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "PART-W",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "AREA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "POWR",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "ATAP",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "MIKA",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "AGII",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "OMED",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "PPRO",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "TUGU",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "MOLI",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "NIRO",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "GEMS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "CARS",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "EPAC",
+      "signal": "BROKER_DRIVEN",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "ACCUMULATION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    },
+    {
+      "symbol": "PART",
+      "signal": "RISK_DISTRIBUTION",
+      "score": 6,
+      "insider": {
+        "signal": null,
+        "score": 0,
+        "net": 0,
+        "key_person": false,
+        "foreign": false
+      },
+      "broker": {
+        "signal": "DISTRIBUTION",
+        "score": 6,
+        "net": 0,
+        "tags": []
+      },
+      "alignment_score": 2
+    }
+  ]
+}
