@@ -1,0 +1,103 @@
+{
+  "symbol": "WBSA",
+  "ticker": "WBSA.JK",
+  "fetched_at": "2026-04-22T12:11:44.257747",
+  "trading_days": 8,
+  "market_score": 65,
+  "context": {
+    "last_close": 855.0,
+    "sma20": null,
+    "sma50": null,
+    "ema20": null,
+    "above_sma20": null,
+    "above_sma50": null,
+    "rsi_14": null,
+    "macd": null,
+    "volume": {
+      "avg_60d": 5372400,
+      "avg_7d": 5847300,
+      "last": 18906500,
+      "ratio_7d": 1.09,
+      "ratio_1d": 3.52,
+      "trend": "NORMAL",
+      "spike_today": true
+    },
+    "momentum": {
+      "return_5d": 142.9,
+      "return_20d": null,
+      "return_60d": 278.32,
+      "trend": "UPTREND"
+    },
+    "high_60d": 855.0,
+    "low_60d": 226.0,
+    "pct_from_high": 0.0,
+    "pct_from_low": 278.32,
+    "market_score": 65
+  },
+  "ohlcv": [
+    {
+      "date": "2026-04-10",
+      "open": 226.0,
+      "high": 226.0,
+      "low": 226.0,
+      "close": 226.0,
+      "volume": 2048100
+    },
+    {
+      "date": "2026-04-13",
+      "open": 282.0,
+      "high": 282.0,
+      "low": 282.0,
+      "close": 282.0,
+      "volume": 1586300
+    },
+    {
+      "date": "2026-04-14",
+      "open": 352.0,
+      "high": 352.0,
+      "low": 352.0,
+      "close": 352.0,
+      "volume": 1840000
+    },
+    {
+      "date": "2026-04-15",
+      "open": 440.0,
+      "high": 440.0,
+      "low": 440.0,
+      "close": 440.0,
+      "volume": 2471800
+    },
+    {
+      "date": "2026-04-16",
+      "open": 550.0,
+      "high": 550.0,
+      "low": 550.0,
+      "close": 550.0,
+      "volume": 4979900
+    },
+    {
+      "date": "2026-04-17",
+      "open": 685.0,
+      "high": 685.0,
+      "low": 685.0,
+      "close": 685.0,
+      "volume": 11146600
+    },
+    {
+      "date": "2026-04-20",
+      "open": 685.0,
+      "high": 685.0,
+      "low": 685.0,
+      "close": 685.0,
+      "volume": 0
+    },
+    {
+      "date": "2026-04-21",
+      "open": 855.0,
+      "high": 855.0,
+      "low": 855.0,
+      "close": 855.0,
+      "volume": 18906500
+    }
+  ]
+}

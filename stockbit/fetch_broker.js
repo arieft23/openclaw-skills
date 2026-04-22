@@ -287,7 +287,6 @@ async function main() {
   };
 
   saveToFile(output);
-  console.log(JSON.stringify(output, null, 2));
 }
 
 main();

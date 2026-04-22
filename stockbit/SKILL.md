@@ -23,20 +23,41 @@ The agent operates **strictly on local JSON files**. It never runs JavaScript, n
 ```
 ~/stockbit/data/
 ├── latest/
-│   ├── insider.json       ← latest insider signals
-│   ├── broker.json        ← latest broker flow signals
-│   └── unified.json       ← PRIMARY SOURCE — agent reads this first
+│   ├── insider.json             ← insider signals
+│   ├── broker.json              ← broker flow signals
+│   └── unified_enriched.json   ← PRIMARY SOURCE — agent reads this
 ├── insider/
-│   └── YYYY-MM-DD.json    ← dated archive
+│   └── YYYY-MM-DD.json
 ├── broker/
 │   └── YYYY-MM-DD.json
-├── unified/
+├── yfinance/
+│   ├── latest/
+│   │   ├── _index.json          ← symbol list + market scores
+│   │   └── SYMBOL.json          ← per-symbol OHLCV + indicators
+│   └── YYYY-MM-DD/
+│       └── SYMBOL.json
+├── unified_enriched/
 │   └── YYYY-MM-DD.json
 └── feedback/
-    └── YYYY-MM-DD.md      ← agent writes improvement proposals here
+    └── YYYY-MM-DD.md            ← agent writes improvement proposals here
 ```
 
-**The agent must always load `latest/unified.json` first.** Insider and broker files are used only for deeper investigation of a specific symbol.
+**Pipeline (run in order):**
+```bash
+node fetch_insider.js       # → data/latest/insider.json
+node fetch_broker.js        # → data/latest/broker.json
+python3 fetch_yfinance.py   # → data/yfinance/latest/*.json  (top 200 IDX)
+python3 enrich_unified.py   # → data/latest/unified_enriched.json
+```
+
+Install dependencies:
+```bash
+pip install yfinance numpy --break-system-packages
+```
+
+Note: `fetch_unified.js` is no longer part of the pipeline. `enrich_unified.py` handles the full merge of insider + broker + yfinance in one pass.
+
+**The agent must always load `latest/unified_enriched.json` first.** Insider, broker, and raw yfinance files are used only for deeper investigation.
 
 ---
 
@@ -59,6 +80,13 @@ The agent operates **strictly on local JSON files**. It never runs JavaScript, n
 | `tags` | array | Signal modifiers — see Tag Reference below |
 | `insider` | object \| null | Insider snapshot (null if no insider data) |
 | `broker` | object \| null | Broker snapshot (null if no broker data) |
+| `market_score` | number \| null | yfinance market score 0–100 (null if no data) |
+| `market_signal` | string | BULLISH / BEARISH / NEUTRAL / UNKNOWN |
+| `market_alignment` | string | CONFIRMING / CONTRADICTING / NEUTRAL / UNKNOWN |
+| `final_score` | number | composite_score × 0.7 + market_score × 0.3 |
+| `signal_quality` | string | STRONG / MODERATE / WEAK / NOISE |
+| `quality_factors` | array | List of contributing signals e.g. ["insider_bullish","market_confirming"] |
+| `market_context` | object \| null | Compact indicator snapshot (RSI, MACD, volume, momentum, MAs) |
 
 ### Insider Snapshot Fields
 
@@ -189,9 +217,10 @@ The agent follows this exact sequence on every run:
 
 ### Step 1 — Load unified data
 ```
-Read: ~/stockbit/data/latest/unified.json
+Read: ~/stockbit/data/latest/unified_enriched.json
 ```
-Never run any JS script. Never fetch from APIs. If the file doesn't exist, tell the user to run the pipeline first.
+Never run any JS script. Never fetch from APIs. If the file doesn't exist, tell the user:
+"Run: `node fetch_insider.js && node fetch_broker.js && python3 fetch_yfinance.py && python3 enrich_unified.py`"
 
 ### Step 2 — Read meta block
 Check `meta.generated_at`. If older than 24 hours, warn the user that data may be stale before proceeding.
@@ -329,7 +358,12 @@ Only if DIVERGENT tags present:
 - Symbol + what insider says + what broker says
 - Why the conflict may exist (insider buying but market selling = stealth accumulation?)
 
-### 5. Data Quality Notes
+### 5. Technical Opportunities (separate section)
+From `technical_opportunities` array — stocks with strong yfinance setups but no insider/broker signal yet.
+For each: symbol, market_score, factors list, brief note.
+Label clearly: "No insider/broker confirmation — technical setup only."
+
+### 6. Data Quality Notes
 - Count of NOISY signals discarded
 - Count of single-source signals (lower reliability)
 - Any anomalies observed
@@ -378,3 +412,7 @@ Only if DIVERGENT tags present:
 | v2.3 | Added NOISY filter (min 2 brokers, min 2 days for broker-only signals) |
 | v2.4 | Raised MEDIUM conviction threshold from 25 to 30 |
 | v2.5 | Added continuous improvement protocol and feedback file |
+| v3.0 | Replaced fetch_unified.js with enrich_unified.py — single-pass merger |
+| v3.0 | Added fetch_yfinance.py — top 200 IDX + insider/broker extras |
+| v3.0 | Added market_score, final_score, market_alignment, signal_quality fields |
+| v3.0 | Added technical_opportunities section (pure yfinance setups) |
