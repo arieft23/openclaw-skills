@@ -9,10 +9,7 @@
 
 This skill enhances the Stockbit Market Intelligence Agent by integrating real-time stock prices from yfinance and news sentiment from websearch. It combines precomputed Stockbit signals with live market data and news context to provide comprehensive trading analysis.
 
-**Core Principle:** This skill is a read-only overlay. It NEVER stores JSON files locally. All data is fetched on-demand:
-- Stockbit signals → read from `stockbit/data/latest/unified.json` (read-only)
-- Real-time prices → fetched via yfinance (no caching)
-- News → fetched via websearch (no caching)
+**Core Principle:** This skill is a read-only overlay. It NEVER stores JSON files locally. All data is fetched on-demand from the Stockbit skill data directory.
 
 ---
 
@@ -21,8 +18,7 @@ This skill enhances the Stockbit Market Intelligence Agent by integrating real-t
 ```
 ~/stockbit-enhanced/
 ├── SKILL.md              ← This file
-├── top_idn_stock.py      ← Main command handler
-└── analyze.py            ← Analysis engine
+└── top_idn_stock.py      ← Main command handler
 ```
 
 ---
@@ -31,168 +27,141 @@ This skill enhances the Stockbit Market Intelligence Agent by integrating real-t
 
 ### 1. Stockbit Signals
 ```
-Path: ~/stockbit/data/latest/unified.json
+Path: ~/stockbit/data/latest/unified_enriched.json
 Access: READ ONLY
 Action: Load unified signals, filter by conviction
 ```
 
-### 2. Real-time Prices (yfinance)
+### 2. Historical Price Data
 ```
-API: yfinance Python package
-Action: Fetch current price, change%, volume
-No caching - always fresh data
+Path: ~/stockbit/data/yfinance/latest/SYMBOL.json
+Access: READ ONLY
+Action: Load historical OHLCV, technical indicators
+Contains: 60-day price history, RSI, MACD, volume trends
 ```
 
-### 3. News (websearch)
+### 3. Historical Insider Data
+```
+Path: ~/stockbit/data/insider/YYYY-MM-DD.json
+Access: READ ONLY
+Action: Track insider activity over time
+Contains: buy/sell volume, unique actors, key person activity
+```
+
+### 4. Historical Broker Data
+```
+Path: ~/stockbit/data/broker/YYYY-MM-DD.json
+Access: READ ONLY
+Action: Track broker flow over time
+Contains: net flow, buy ratio, cluster days, breadth
+```
+
+### 5. News (websearch)
 ```
 Tool: ollama_web_search
 Action: Search recent news for target symbols
-No caching - always fresh data
 ```
 
 ---
 
-## Integration Flow
+## Telegram Bot Command: /top_idn_stock
 
 ```
-User Request
-    ↓
-Step 1: Read Stockbit unified.json (filter top signals)
-    ↓
-Step 2: Fetch real-time prices via yfinance
-    ↓
-Step 3: Search news via websearch
-    ↓
-Step 4: Generate integrated analysis
-    ↓
-Output: Human-readable recommendation
+/top_idn_stock           → Show top 5 stocks (default)
+/top_idn_stock 5         → Show top 5 stocks
+/top_idn_stock 10        → Show top 10 stocks (max)
 ```
 
 ---
 
-## Telegram Bot Command: /top-idn-stock
+## Usage: Check Individual Stock
 
+### Syntax
 ```
-/top-idn-stock           → Show top 5 stocks (default)
-/top-idn-stock 5         → Show top 5 stocks
-/top-idn-stock 7         → Show top 7 stocks
-/top-idn-stock 10        → Show top 10 stocks (max)
-```
-
-**Implementation:**
-- File: `top_idn_stock.py`
-- Integrates: Stockbit signals + yfinance prices + websearch news
-- Max limit: 10 stocks
-- Company profiles: Included for each stock
-
-**Example Output:**
-```
-🔥 Top 5 Indonesian Stocks - 2026-04-21
-==================================================
-
-🚀 #1 TLKM
-   Signal: EXTREME_CONVICTION (EXTREME)
-   Score: 78/100
-   💰 Price: Rp 3,030 (-2.27%) Vol: 19.5M
-   🏢 Telkom Indonesia - Telecom giant, fiber & 5G provider
-   📰 TLKM cancels EGMS, consolidating PLN Icon+ fiber
-   🎯 STRONG BUY ⭐
-
-🚀 #2 BULL
-   Signal: EXTREME_CONVICTION (EXTREME)
-   Score: 76/100
-   💰 Price: Rp 520 (+6.06%) Vol: 560.8M
-   🏢 Buana Lintas Lautan - Oil & gas tanker shipping
-   📰 Strong broker cluster, 7-day insider buying
-   🎯 BUY ⭐
-
-🚀 #3 KIJA
-   Signal: EXTREME_CONVICTION (EXTREME)
-   Score: 75/100
-   💰 Price: Rp 190 (+0.53%) Vol: 32.6M
-   🏢 Kija Holdings - Nickel mining & processing
-   📰 Foreign accumulation, strong broker 90% buy ratio
-   🎯 BUY ⭐
-
-📈 #4 PACK
-   Signal: EXTREME_CONVICTION (HIGH)
-   Score: 74/100
-   💰 Price: Rp 290 (+2.84%) Vol: 194.2M
-   🏢 Packaging Corp - Paper & packaging manufacturer
-   📰 Massive insider volume, smart money buying
-   🎯 BUY ⭐
-
-📈 #5 ARNA
-   Signal: HIGH_CONVICTION (HIGH)
-   Score: 57/100
-   💰 Price: Rp 505 (0.00%) Vol: 1.6M
-   🏢 Arwana Citramulia - Ceramic tiles manufacturer
-   📰 DIVIDEND JUMBO! Rp330B cash dividend
-   🎯 BUY ⭐ (dividend play)
-
-==================================================
-💡 Use /top-idn-stock [N] for more stocks
+check <SYMBOL>           → Full analysis with all history
+history <SYMBOL>         → Historical price data only
 ```
 
-### Full Analysis (Python Script)
+### Example: Check TLKM
 ```
-Run: python ~/stockbit-enhanced/analyze.py
-Output: Top 5 enhanced signals with prices + news
-```
-
-### Single Symbol Analysis
-```
-User asks: "Analyze TLKM"
-Action: 
-  1. Read TLKM from unified.json
-  2. Fetch yfinance price
-  3. Search websearch news
-  4. Output integrated recommendation
-```
-
-### Filtered Analysis
-```
-User asks: "Show only EXTREME_CONVICTION stocks"
+User: check TLKM
 Action:
-  1. Filter unified.json by EXTREME_CONVICTION
-  2. Fetch prices for filtered list
-  3. Search news for top 3
-  4. Output results
+  1. Read unified_enriched.json for TLKM signal
+  2. Read yfinance/latest/TLKM.json for price history
+  3. Read insider/YYYY-MM-DD.json for insider history
+  4. Read broker/YYYY-MM-DD.json for broker history
+  5. Fetch live price via yfinance
+  6. Search news via websearch
+  7. Output comprehensive analysis
+```
+
+### Example Output: TLKM
+```
+📊 TLKM - Comprehensive Analysis
+==================================================
+
+🏢 Telkom Indonesia - Telecom giant, fiber & 5G
+
+💰 Price: Rp 3,000 (-0.33%) [live yfinance]
+📊 Signal: EXTREME_CONVICTION (score: 80/100)
+🎯 Conviction: EXTREME
+
+📈 Price History (from yfinance):
+   60D Range: Rp 2,830 - Rp 3,990
+   Current: Rp 3,010 (-24.6% from high)
+   RSI(14): 38.7 (oversold)
+   MACD: BULLISH
+   SMA20: Rp 3,125 (price below)
+   Volume: CONTRACTING
+
+💵 Insider History (from insider/):
+   Latest: 5.6B shares bought (6 days, 100% buy ratio)
+   Key Person: None
+   Unique Actors: 1
+   Foreign: Accumulating
+
+💵 Broker History (from broker/):
+   Latest: Rp 16.9B net flow (5 days)
+   Buy Ratio: 70% (30 buy / 14 sell)
+   Cluster: 5 days
+   Unique Brokers: 20
+   Breadth: BROAD_BUY
+
+📰 News:
+   Q1 Earnings Apr 22 | MarketBeat | Apr 2026
+   Buyback Program + ARPU Growth | Seeking Alpha
+   BP BUMN controls 0.52% | IDNFinancials
+
+🎯 Recommendation: STRONG BUY
+   - Dual source (insider + broker) aligned
+   - Price oversold, potential bounce
+   - Wait for price > Rp 3,125 (SMA20)
 ```
 
 ---
 
-## Signal Convergence Rules
+## Historical Data Analysis
 
-| Stockbit Signal | Price Action | News Sentiment | → Recommendation |
-|---|---|---|---|
-| EXTREME_CONVICTION | Uptrend (+>2%) | Positive | 🚀 STRONG BUY |
-| HIGH_CONVICTION | Uptrend | Positive | 📈 BUY |
-| HIGH_CONVICTION | Flat/Mixed | Neutral | 👀 WATCH |
-| ACCUMULATION | Any | Any | 👀 WATCH |
-| DISTRIBUTION | Downtrend | Negative | ⚠️ AVOID |
-| DIVERGENT | Any | Any | ⚠️ MONITOR |
-
----
-
-## Constraints
-
-- **NEVER write to Stockbit data files** — read-only access
-- **NEVER cache JSON locally** — always fetch fresh
-- **Use yfinance for prices** — no alternative APIs
-- **Use websearch for news** — no premium news APIs
-- **Respect rate limits** — space out calls
-- **Handle missing data gracefully** — partial analysis OK
-
----
-
-## Installation
-
-```bash
-pip install yfinance
+### Price History (yfinance)
+```
+Source: ~/stockbit/data/yfinance/latest/SYMBOL.json
+Fields: date, open, high, low, close, volume
+Range: 60 trading days
 ```
 
-No other dependencies required. OpenClaw provides websearch tool.
+### Insider History
+```
+Source: ~/stockbit/data/insider/YYYY-MM-DD.json
+Fields: symbol, buy_volume, sell_volume, buy_ratio, active_days, unique_actors
+Use: Track insider conviction over time
+```
+
+### Broker History
+```
+Source: ~/stockbit/data/broker/YYYY-MM-DD.json
+Fields: symbol, net_value_idr, buy_ratio, cluster_days, broker_buy_count
+Use: Track broker flow trends over time
+```
 
 ---
 
@@ -200,8 +169,8 @@ No other dependencies required. OpenClaw provides websearch tool.
 
 | Version | Change |
 |---------|--------|
-| v1.0 | Initial release - read-only overlay design |
-| v1.1 | Removed all local JSON caching |
-| v1.2 | Simplified file structure (single script) |
-| v1.3 | Added company profiles to output |
-| v1.4 | Added real-time yfinance prices |
+| v1.0 | Initial release |
+| v1.5 | Updated to unified_enriched.json |
+| v1.6 | Added historical data analysis from yfinance |
+| v1.7 | Added check/history commands |
+| v1.8 | Added insider & broker historical tracking |
