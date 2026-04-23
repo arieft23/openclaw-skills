@@ -13,6 +13,9 @@ const MONTH_BACK             = 1;
 const MIN_SCORE              = 50;
 const LARGE_VOLUME_THRESHOLD = 10_000_000;
 const REQUIRE_ANY            = ['key_person', 'large_volume', 'distribution'];
+const REQUEST_TIMEOUT_MS     = 10_000;
+const RETRY_COUNT            = 3;
+const RETRY_DELAY_MS         = 500;
 
 // ---------- HELPERS ----------
 function formatDate(d) { return d.toISOString().slice(0, 10); }
@@ -36,16 +39,33 @@ function toNumber(str) {
   return isNaN(n) ? null : n;
 }
 
+// Recency weight: transactions in the last 14 days get 1.0, older decay toward 0.5
+function recencyWeight(dateStr) {
+  const txDate  = new Date(dateStr);
+  const now     = new Date();
+  const daysAgo = Math.max(0, (now - txDate) / (1000 * 60 * 60 * 24));
+  return daysAgo <= 14 ? 1.0 : Math.max(0.5, 1.0 - (daysAgo - 14) / 60);
+}
+
+// ---------- RETRY WRAPPER ----------
+async function withRetry(fn, retries = RETRY_COUNT, delayMs = RETRY_DELAY_MS) {
+  try {
+    return await fn();
+  } catch (e) {
+    if (retries === 0) throw e;
+    await new Promise(r => setTimeout(r, delayMs));
+    return withRetry(fn, retries - 1, delayMs * 1.5);
+  }
+}
+
 // ---------- SAVE ----------
 function saveToFile(data) {
   const today = formatDate(new Date());
 
-  // dated archive
   const archiveDir = path.join(__dirname, 'data', 'insider');
   fs.mkdirSync(archiveDir, { recursive: true });
   fs.writeFileSync(path.join(archiveDir, `${today}.json`), JSON.stringify(data, null, 2));
 
-  // latest symlink
   const latestDir = path.join(__dirname, 'data', 'latest');
   fs.mkdirSync(latestDir, { recursive: true });
   fs.writeFileSync(path.join(latestDir, 'insider.json'), JSON.stringify(data, null, 2));
@@ -84,7 +104,7 @@ function transformData(movement) {
       is_key_person, badges };
   }
 
-  // aggregate splits
+  // Aggregate splits
   const aggMap = {};
   for (const d of Object.values(dedupMap)) {
     const key = `${d.symbol}-${d.actor}-${d.date}-${d.action}`;
@@ -120,7 +140,11 @@ function buildSignals(data) {
         buy_count: 0,  sell_count: 0, key_person_buys: 0,
         key_person_activity: false, foreign_accumulation: false,
         active_days: new Set(), buy_days_set: new Set(), sell_days_set: new Set(),
-        actors: new Set()
+        actors: new Set(),
+        // v2.6: track recent days count for recency weighting
+        recent_days: new Set(),
+        weighted_buy_volume: 0, weighted_sell_volume: 0,
+        multi_key_person: false, key_person_count: new Set()
       };
     }
 
@@ -128,17 +152,26 @@ function buildSignals(data) {
     s.actors.add(d.actor);
     s.active_days.add(d.date);
 
+    const rw = recencyWeight(d.date);
+    const cutoff = new Date(); cutoff.setDate(cutoff.getDate() - 14);
+    if (new Date(d.date) >= cutoff) s.recent_days.add(d.date);
+
     if (d.action === 'BUY') {
       s.buy_volume  += d.volume;
       s.net_volume  += d.volume;
       s.buy_count++;
       s.buy_days_set.add(d.date);
-      if (d.is_key_person) s.key_person_buys++;
+      s.weighted_buy_volume += d.volume * rw;
+      if (d.is_key_person) {
+        s.key_person_buys++;
+        s.key_person_count.add(d.actor);
+      }
     } else {
       s.sell_volume += d.volume;
       s.net_volume  -= d.volume;
       s.sell_count++;
       s.sell_days_set.add(d.date);
+      s.weighted_sell_volume += d.volume * rw;
     }
 
     if (d.is_key_person) s.key_person_activity = true;
@@ -146,12 +179,27 @@ function buildSignals(data) {
   }
 
   return Object.values(map).map(s => {
-    let score = Math.abs(s.net_volume) / 1_000_000;
+    // v2.6: log10 scoring — reduces raw volume bias
+    const net_weighted = s.weighted_buy_volume - s.weighted_sell_volume;
+    let score = Math.log10(Math.abs(net_weighted) + 1) * 10;
+
+    // Recency boost: recent_days / active_days ratio
+    const recency_ratio = s.active_days.size > 0
+      ? s.recent_days.size / s.active_days.size : 0;
+    score += recency_ratio * 10;
+
     if (s.key_person_activity) score += 20;
     if (s.key_person_buys > 0) score += s.key_person_buys * 5;
     if (s.foreign_accumulation) score += 10;
     score += s.actors.size * 5;
     score += s.active_days.size * 3;
+
+    // v2.6: multi-key-person bonus
+    const multi_key_person = s.key_person_count.size >= 2;
+    if (multi_key_person) score += 15;
+
+    // v2.6: insider cluster tag (buying on 3+ separate days by key persons)
+    const insider_cluster_buy = s.key_person_buys >= 2 && s.buy_days_set.size >= 3;
 
     let signal = "NEUTRAL";
     if (s.net_volume > 0 && s.buy_count > s.sell_count) signal = "ACCUMULATION";
@@ -159,12 +207,15 @@ function buildSignals(data) {
     if (s.net_volume < 0 && s.sell_count > s.buy_count) signal = "DISTRIBUTION";
 
     const total_tx = s.buy_volume + s.sell_volume;
+    const tags     = [];
+    if (multi_key_person)    tags.push("MULTI_KEY_PERSON");
+    if (insider_cluster_buy) tags.push("INSIDER_CLUSTER_BUY");
 
-    // SKILL.md schema-compliant field names
     return {
       symbol:               s.symbol,
       signal,
       score:                Math.round(score),
+      tags,
       net_volume:           s.net_volume,
       buy_volume:           s.buy_volume,
       sell_volume:          s.sell_volume,
@@ -172,10 +223,14 @@ function buildSignals(data) {
       active_days:          s.active_days.size,
       buy_days:             s.buy_days_set.size,
       sell_days:            s.sell_days_set.size,
-      key_person_activity:  s.key_person_activity,   // SKILL.md name
-      key_person_buys:      s.key_person_buys,        // SKILL.md name
-      foreign_accumulation: s.foreign_accumulation,   // SKILL.md name
-      unique_actors:        s.actors.size
+      recent_days:          s.recent_days.size,
+      recency_ratio:        +recency_ratio.toFixed(2),
+      key_person_activity:  s.key_person_activity,
+      key_person_buys:      s.key_person_buys,
+      foreign_accumulation: s.foreign_accumulation,
+      unique_actors:        s.actors.size,
+      multi_key_person,
+      insider_cluster_buy
     };
   }).sort((a, b) => b.score - a.score);
 }
@@ -198,10 +253,11 @@ async function fetchAll() {
 
   while (true) {
     try {
-      const res = await axios.get(BASE_URL, {
+      const res = await withRetry(() => axios.get(BASE_URL, {
         params: { page, limit: 50, date_start, date_end },
-        headers: { authorization: `Bearer ${TOKEN}` }
-      });
+        headers: { authorization: `Bearer ${TOKEN}` },
+        timeout: REQUEST_TIMEOUT_MS
+      }));
 
       const data = res.data?.data;
       if (!data?.movement?.length) break;
@@ -213,7 +269,7 @@ async function fetchAll() {
       await new Promise(r => setTimeout(r, 300));
 
     } catch (e) {
-      console.error("❌ insider fetch error:", e.message);
+      console.error(JSON.stringify({ stage: "insider_fetch", page, error: e.message }));
       break;
     }
   }
@@ -223,17 +279,22 @@ async function fetchAll() {
 
 // ---------- MAIN ----------
 (async () => {
+  const startTime = Date.now();
   const raw     = await fetchAll();
   const signals = buildSignals(raw);
   const filtered = signals.filter(isImportant);
 
+  const runtime_seconds = Math.round((Date.now() - startTime) / 1000);
+  console.error(JSON.stringify({ stage: "insider_done", runtime_seconds, total: signals.length, filtered: filtered.length }));
+
   const output = {
     meta: {
-      generated_at:    new Date().toISOString(),
+      generated_at:      new Date().toISOString(),
       date_range_months: MONTH_BACK,
-      total_symbols:   signals.length,
-      filtered:        filtered.length,
-      min_score:       MIN_SCORE
+      total_symbols:     signals.length,
+      filtered:          filtered.length,
+      min_score:         MIN_SCORE,
+      runtime_seconds
     },
     signals: filtered
   };

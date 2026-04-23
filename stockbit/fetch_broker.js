@@ -22,9 +22,11 @@ const MIN_TRANSACTION_VALUE = 50_000_000;
 const MIN_DAILY_TOTAL       = 200_000_000;
 const MIN_NET_ABS           = 200_000_000;
 const MIN_SCORE             = 5;
+const REQUEST_TIMEOUT_MS    = 10_000;
+const RETRY_COUNT           = 3;
+const RETRY_DELAY_MS        = 1_000;  // base retry delay
+const DELAY_MS              = 200;    // delay between sequential requests
 
-// Tier 1 = large foreign/prime, Tier 2 = mid institutional, Tier 3 = local semi-inst
-// Unlisted brokers = DEFAULT_WEIGHT (low tier)
 const BROKER_WEIGHT = {
   "AK": 1.8, "BK": 1.8, "KZ": 1.8,
   "YU": 1.6, "RX": 1.6, "TP": 1.6,
@@ -64,34 +66,66 @@ function saveToFile(data) {
   console.error(`💾 broker → data/broker/${today}.json + data/latest/broker.json`);
 }
 
+// ---------- RETRY ----------
+async function withRetry(fn, retries = RETRY_COUNT, delayMs = RETRY_DELAY_MS) {
+  try {
+    return await fn();
+  } catch (e) {
+    if (retries === 0) throw e;
+    const is429 = e.response?.status === 429;
+    const wait  = is429 ? Math.max(delayMs * 4, 5_000) : delayMs;
+    if (is429) console.error(`⏳ 429 — waiting ${wait}ms before retry (${retries} left)`);
+    await new Promise(r => setTimeout(r, wait));
+    return withRetry(fn, retries - 1, delayMs * 1.5);
+  }
+}
+
 // ---------- FETCH ----------
 async function getTopBrokers() {
-  const res = await axios.get(BASE_TOP, {
-    params: { sort: 'TB_SORT_BY_TOTAL_VALUE' }, headers
+  return withRetry(async () => {
+    const res = await axios.get(BASE_TOP, {
+      params: { sort: 'TB_SORT_BY_TOTAL_VALUE' },
+      headers,
+      timeout: REQUEST_TIMEOUT_MS
+    });
+    return res.data?.data?.list?.slice(0, TOP_N) || [];
   });
-  return res.data?.data?.list?.slice(0, TOP_N) || [];
 }
 
 async function getBrokerActivity(code, date) {
-  try {
-    const res = await axios.get(BASE_ACTIVITY, {
-      params: { broker_code: code, page: 1, limit: 50, from: date, to: date },
-      headers
-    });
+  // Returns { data, wasEmpty }
+  // wasEmpty=true  → broker had no activity that day (expected, not a failure)
+  // wasEmpty=false → real error (429 exhausted, timeout, etc.)
+  return withRetry(async () => {
+    try {
+      const res = await axios.get(BASE_ACTIVITY, {
+        params: { broker_code: code, page: 1, limit: 50, from: date, to: date },
+        headers,
+        timeout: REQUEST_TIMEOUT_MS
+      });
 
-    const data = res.data?.data?.broker_activity_transaction;
-    if (!data || (!data.brokers_buy?.length && !data.brokers_sell?.length)) return null;
+      const data = res.data?.data?.broker_activity_transaction;
+      if (!data || (!data.brokers_buy?.length && !data.brokers_sell?.length))
+        return { data: null, wasEmpty: true };
 
-    const total =
-      (data.brokers_buy  || []).reduce((a, b) => a + (b.value || 0), 0) +
-      (data.brokers_sell || []).reduce((a, b) => a + (b.value || 0), 0);
-    if (total < MIN_DAILY_TOTAL) return null;
+      const total =
+        (data.brokers_buy  || []).reduce((a, b) => a + (b.value || 0), 0) +
+        (data.brokers_sell || []).reduce((a, b) => a + (b.value || 0), 0);
+      if (total < MIN_DAILY_TOTAL) return { data: null, wasEmpty: true };
 
-    return data;
-  } catch (err) {
-    console.error(`❌ ${code} ${date} →`, err.response?.status || err.message);
-    return null;
-  }
+      return { data, wasEmpty: false };
+    } catch (err) {
+      const status = err.response?.status;
+      if (status === 404) return { data: null, wasEmpty: true }; // no activity — expected
+      throw err; // let withRetry handle it
+    }
+  }).catch(err => {
+    console.error(JSON.stringify({
+      stage: "broker_fetch", broker: code, date, success: false,
+      error: err.response?.status || err.message
+    }));
+    return { data: null, wasEmpty: false }; // real failure after all retries
+  });
 }
 
 // ---------- TRANSFORM ----------
@@ -150,14 +184,24 @@ function buildSignals(allRecords) {
     const net_value = s.total_buy - s.total_sell;
     if (Math.abs(net_value) < MIN_NET_ABS) continue;
 
-    // calendar-accurate buy/sell days
     let buy_days = 0, sell_days = 0;
     for (const net of Object.values(s.date_net)) {
       if (net > 0) buy_days++;
       if (net < 0) sell_days++;
     }
 
-    // --- 4 sub-signals ---
+    const consistency = buy_days / ((buy_days + sell_days) || 1);
+
+    const day_broker_buy = {};
+    for (const r of s.records) {
+      if (r.buy_value > r.sell_value)
+        day_broker_buy[r.date] = (day_broker_buy[r.date] || 0) + 1;
+    }
+    const cluster_days = Object.values(day_broker_buy).filter(c => c >= 2).length;
+
+    // Noise filter: skip weak buy signals with no cluster evidence
+    if (buy_days < 2 && cluster_days === 0 && net_value > 0) continue;
+
     const foreign_net    = s.foreign_buy - s.foreign_sell;
     const foreign_signal = foreign_net > 0 ? "INFLOW" : foreign_net < 0 ? "OUTFLOW" : null;
 
@@ -172,26 +216,18 @@ function buildSignals(allRecords) {
       : broker_sell_count >= 3 && broker_sell_count > broker_buy_count
         ? "BROAD_SELL" : null;
 
-    const day_broker_buy = {};
-    for (const r of s.records) {
-      if (r.buy_value > r.sell_value)
-        day_broker_buy[r.date] = (day_broker_buy[r.date] || 0) + 1;
-    }
-    const cluster_days   = Object.values(day_broker_buy).filter(c => c >= 2).length;
     const cluster_signal = cluster_days >= 2 ? "CLUSTER_BUY"
       : cluster_days === 1 ? "CLUSTER_BUY_WEAK" : null;
 
-    // --- combined score ---
-    let score = 0;
-    const absNet = Math.abs(net_value);
-    if      (absNet >= 100_000_000_000) score += 50;
-    else if (absNet >=  10_000_000_000) score += 35;
-    else if (absNet >=   1_000_000_000) score += 20;
-    else if (absNet >=     200_000_000) score += 8;
+    const smart_dominant   = smart_net > 0 && s.smart_buy > s.total_buy * 0.6;
+    const foreign_dominant = foreign_net > 0 && s.foreign_buy > s.total_buy * 0.5;
 
-    score += s.dates.size   * 4;
-    score += buy_days        * 5;
-    score -= sell_days       * 5;
+    let score = 0;
+    score += Math.log10(Math.abs(net_value) + 1) * 6;
+    score += s.dates.size  * 4;
+    score += buy_days       * 5;
+    score += consistency    * 10;
+    score -= sell_days      * 5;
     if (foreign_signal === "INFLOW")           score += 15;
     if (foreign_signal === "OUTFLOW")          score -= 10;
     if (smart_signal   === "ACCUMULATION")     score += 20;
@@ -200,10 +236,11 @@ function buildSignals(allRecords) {
     if (breadth_signal === "BROAD_SELL")       score -= 8;
     if (cluster_signal === "CLUSTER_BUY")      score += 10;
     if (cluster_signal === "CLUSTER_BUY_WEAK") score += 5;
+    if (smart_dominant)                        score += 8;
+    if (foreign_dominant)                      score += 8;
 
     if (score < MIN_SCORE) continue;
 
-    // --- overall signal ---
     let signal = "NEUTRAL";
     if (net_value > 0 && buy_days >= sell_days) signal = "ACCUMULATION";
     if (net_value > 0 && buy_days >= sell_days &&
@@ -211,22 +248,23 @@ function buildSignals(allRecords) {
     if (net_value < 0 && sell_days >= buy_days) signal = "DISTRIBUTION";
 
     const total_tx = s.total_buy + s.total_sell;
-    const tags     = [foreign_signal, smart_signal, breadth_signal, cluster_signal].filter(Boolean);
+    const tags = [foreign_signal, smart_signal, breadth_signal, cluster_signal].filter(Boolean);
+    if (smart_dominant)   tags.push("SMART_MONEY_DOMINANT");
+    if (foreign_dominant) tags.push("FOREIGN_DOMINANT");
 
-    // SKILL.md schema-compliant fields
     results.push({
       symbol:         s.stock,
       signal,
       score:          Math.round(score),
       tags,
-      net_value_idr:  Math.round(net_value),    // SKILL.md name
+      net_value_idr:  Math.round(net_value),
       buy_value_idr:  Math.round(s.total_buy),
       sell_value_idr: Math.round(s.total_sell),
       buy_ratio:      total_tx > 0 ? +(s.total_buy / total_tx).toFixed(2) : 0,
       active_days:    s.dates.size,
       buy_days,
       sell_days,
-      // sub-signal detail (for unified merger + debugging)
+      consistency:    +consistency.toFixed(2),
       foreign: {
         signal:   foreign_signal,
         net_idr:  Math.round(foreign_net),
@@ -255,35 +293,50 @@ function buildSignals(allRecords) {
 
 // ---------- MAIN ----------
 async function main() {
+  const startTime = Date.now();
+  let api_calls = 0, failed_calls = 0, empty_calls = 0;
+
   console.error("🚀 fetching top brokers...");
   const brokers = await getTopBrokers();
   const dates   = getDates();
-  console.error(`📋 ${brokers.length} brokers × ${dates.length} days = ${brokers.length * dates.length} requests`);
+  const total   = brokers.length * dates.length;
+  console.error(`📋 ${brokers.length} brokers × ${dates.length} days = ${total} requests (sequential, ${DELAY_MS}ms delay)`);
 
   const allRecords = [];
 
   for (const broker of brokers) {
     console.error(`🏦 ${broker.code}`);
     for (const date of dates) {
-      const raw = await getBrokerActivity(broker.code, date);
-      if (!raw) continue;
-      allRecords.push(...transform(broker.code, raw, date));
-      await new Promise(r => setTimeout(r, 120));
+      api_calls++;
+      const { data: raw, wasEmpty } = await getBrokerActivity(broker.code, date);
+      if (!raw) {
+        if (wasEmpty) empty_calls++; else failed_calls++;
+      } else {
+        allRecords.push(...transform(broker.code, raw, date));
+      }
+      await new Promise(r => setTimeout(r, DELAY_MS));
     }
   }
 
-  console.error(`📊 ${allRecords.length} records → building signals...`);
+  console.error(`\n📊 ${allRecords.length} records → building signals...`);
   const signals = buildSignals(allRecords);
   console.error(`✅ ${signals.length} signals`);
 
+  const runtime_seconds = Math.round((Date.now() - startTime) / 1000);
+  console.error(JSON.stringify({ stage: "broker_done", runtime_seconds, api_calls, empty_calls, failed_calls, signals: signals.length }));
+
   const output = {
     meta: {
-      generated_at:   new Date().toISOString(),
-      days_back:      DAYS_BACK,
-      top_n_brokers:  brokers.length,
-      total_signals:  signals.length
+      generated_at:  new Date().toISOString(),
+      days_back:     DAYS_BACK,
+      top_n_brokers: brokers.length,
+      total_signals: signals.length,
+      runtime_seconds,
+      api_calls,
+      empty_calls,
+      failed_calls
     },
-    signals   // SKILL.md uses 'signals' not 'data'
+    signals
   };
 
   saveToFile(output);

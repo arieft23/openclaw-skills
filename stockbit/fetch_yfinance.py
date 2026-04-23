@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_yfinance.py — IDX Top 200 market data fetcher
+v2.6: added Bollinger Bands + ATR to market_context
 
 Fetches 60-day OHLCV + computes indicators for:
   - TOP_200_IDX (hardcoded by market cap tier)
@@ -14,7 +15,8 @@ Saves per-symbol to:
 Run: python3 fetch_yfinance.py
 """
 
-import json, os, sys, time
+import json, os, sys, time, statistics, threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -26,14 +28,12 @@ except ImportError as e:
     sys.exit(1)
 
 # ---------- CONFIG ----------
-DAYS_HISTORY = 60
-DELAY_SEC    = 0.25
-IDX_SUFFIX   = ".JK"
+DAYS_HISTORY  = 60
+DELAY_SEC     = 0.1   # per-thread delay (reduced from 0.25 — spread across workers)
+IDX_SUFFIX    = ".JK"
+CONCURRENCY   = 5     # parallel yfinance fetches — keep ≤ 8 to avoid rate limits
 
 # Top 200 IDX by market cap tiers
-# Tier 1: LQ45 core (highest liquidity/mcap)
-# Tier 2: IDXBUMN20 + IDXMSCI additions
-# Tier 3: Broad midcap coverage
 TOP_200_IDX = [
     # Tier 1 — LQ45 / Blue chip
     "BBCA","BBRI","BMRI","TLKM","ASII","BREN","AMMN","ADRO","GOTO","BYAN",
@@ -41,7 +41,7 @@ TOP_200_IDX = [
     "KLBF","BBNI","BMTR","EXCL","SMGR","TBIG","TOWR","MNCN","BBTN","BJTM",
     "INDF","GGRM","HMSP","AALI","LSIP","JPFA","CPIN","MAIN","BFIN","ITMG",
     "HRUM","ESSA","DSSA","MBMA","NCKL","NICL","INCO","TINS","TKIM","INKP",
-    # Tier 2 — BUMN + MSCIadditions
+    # Tier 2 — BUMN + MSCI additions
     "JSMR","WSKT","PTPP","WIKA","ADHI","SSIA","NRCA","WTON","TOTL","ACST",
     "ISAT","FREN","LINK","CENT","BTEL","SUPR","TBLA","SGRO","SSMS","PALM",
     "SIMP","DSNG","TAPG","MGRO","ANJT","BWPT","GZCO","SMAR","WLSH","CSRA",
@@ -98,10 +98,46 @@ def macd(closes, fast=12, slow=26, sig=9):
     return {"macd": round(ml,4), "signal": round(sl,4) if sl else None,
             "histogram": h, "trend": "BULLISH" if h and h>0 else "BEARISH" if h else None}
 
+def bollinger(closes, n=20):
+    """Bollinger Bands (20, 2). Returns upper/middle/lower/bandwidth/pct_b."""
+    if len(closes) < n: return None
+    window = closes[-n:]
+    mean   = float(np.mean(window))
+    std    = float(np.std(window, ddof=1))
+    upper  = mean + 2 * std
+    lower  = mean - 2 * std
+    last   = closes[-1]
+    bw     = round(4 * std / mean * 100, 2) if mean else None
+    pct_b  = round((last - lower) / (upper - lower) * 100, 2) if (upper - lower) > 0 else None
+    return {
+        "upper":     round(upper, 2),
+        "middle":    round(mean, 2),
+        "lower":     round(lower, 2),
+        "bandwidth": bw,
+        "pct_b":     pct_b   # 0 = at lower band, 50 = at middle, 100 = at upper
+    }
+
+def atr(ohlcv, n=14):
+    """Average True Range (Wilder's, 14). Returns atr and atr_pct."""
+    if len(ohlcv) < n + 1: return None
+    trs = []
+    for i in range(1, len(ohlcv)):
+        h, l, pc = ohlcv[i]["high"], ohlcv[i]["low"], ohlcv[i-1]["close"]
+        trs.append(max(h - l, abs(h - pc), abs(l - pc)))
+    if len(trs) < n: return None
+    atr_val = sum(trs[:n]) / n
+    for tr in trs[n:]:
+        atr_val = (atr_val * (n - 1) + tr) / n
+    last_close = ohlcv[-1]["close"]
+    return {
+        "atr":     round(atr_val, 2),
+        "atr_pct": round(atr_val / last_close * 100, 2) if last_close else None
+    }
+
 def volume_analysis(vols, closes):
     if len(vols) < 5: return None
     avg60 = float(np.mean(vols))
-    if avg60 == 0: return None   # suspended / zero-volume stock
+    if avg60 == 0: return None
     avg7  = float(np.mean(vols[-7:])) if len(vols)>=7 else None
     last  = float(vols[-1])
     r7    = round(avg7/avg60, 2) if avg7 else None
@@ -132,11 +168,13 @@ def market_context(ohlcv):
     m   = macd(closes)
     v   = volume_analysis(volumes, closes)
     mom = momentum(closes)
+    bb  = bollinger(closes)
+    atr_data = atr(ohlcv)
     h60,l60 = max(highs), min(lows)
     pfh = round((last-h60)/h60*100, 2)
     pfl = round((last-l60)/l60*100, 2)
 
-    # Market score: neutral=50, range 0-100
+    # Market score
     score = 50
     if r:
         if r<30: score+=15
@@ -158,6 +196,10 @@ def market_context(ohlcv):
     if s50: score += 5 if last>s50 else -5
     if pfl<5: score+=5
     if pfh>-5: score-=5
+    # v2.6: Bollinger bonus — near lower band + market confirming = oversold setup
+    if bb and bb.get("pct_b") is not None:
+        if bb["pct_b"] < 10: score += 8   # very near lower band — potential bounce
+        elif bb["pct_b"] > 90: score -= 5  # near upper band — extended
 
     ms = max(0, min(100, round(score)))
     ctx = {
@@ -165,6 +207,7 @@ def market_context(ohlcv):
         "sma50": round(s50,2) if s50 else None, "ema20": round(e20,2) if e20 else None,
         "above_sma20": last>s20 if s20 else None, "above_sma50": last>s50 if s50 else None,
         "rsi_14": r, "macd": m, "volume": v, "momentum": mom,
+        "bollinger": bb, "atr": atr_data,
         "high_60d": round(h60,2), "low_60d": round(l60,2),
         "pct_from_high": pfh, "pct_from_low": pfl, "market_score": ms
     }
@@ -212,42 +255,56 @@ def load_extra_symbols():
 
 # ---------- MAIN ----------
 def main():
+    start_time = time.time()
     extra = load_extra_symbols()
     all_symbols = list(dict.fromkeys(TOP_200_IDX + list(extra - set(TOP_200_IDX))))
     print(f"📋 {len(TOP_200_IDX)} top200 + {len(extra - set(TOP_200_IDX))} insider/broker extras = {len(all_symbols)} total", file=sys.stderr)
 
     results, failed = {}, []
+    lock = threading.Lock()
+    total = len(all_symbols)
+    completed = 0
 
-    for i, sym in enumerate(all_symbols):
-        print(f"  [{i+1}/{len(all_symbols)}] {sym}", file=sys.stderr, end="\r")
+    def process(sym):
+        nonlocal completed
+        time.sleep(DELAY_SEC + (hash(sym) % 100) / 1000)  # per-thread jitter
         ohlcv = fetch_symbol(sym)
         if not ohlcv or len(ohlcv) < 5:
-            failed.append(sym)
-            time.sleep(DELAY_SEC)
-            continue
-
+            return sym, None, None
         ctx, ms = market_context(ohlcv)
         if ctx is None:
-            failed.append(sym)
-            continue
-
+            return sym, None, None
         payload = {
             "symbol": sym, "ticker": f"{sym}{IDX_SUFFIX}",
             "fetched_at": datetime.now().isoformat(),
             "trading_days": len(ohlcv),
             "market_score": ms, "context": ctx, "ohlcv": ohlcv
         }
-        save_symbol(sym, payload)
-        results[sym] = ms
-        time.sleep(DELAY_SEC)
+        return sym, payload, ms
 
-    print(f"\n✅ fetched: {len(results)} | ❌ failed: {len(failed)}", file=sys.stderr)
+    with ThreadPoolExecutor(max_workers=CONCURRENCY) as executor:
+        futures = {executor.submit(process, sym): sym for sym in all_symbols}
+        for future in as_completed(futures):
+            completed += 1
+            sym, payload, ms = future.result()
+            print(f"  [{completed}/{total}] {sym}", file=sys.stderr, end="\r")
+            with lock:
+                if payload is None:
+                    failed.append(sym)
+                else:
+                    save_symbol(sym, payload)
+                    results[sym] = ms
+
+    runtime_seconds = round(time.time() - start_time)
+    print(f"\n✅ fetched: {len(results)} | ❌ failed: {len(failed)} | ⏱ {runtime_seconds}s", file=sys.stderr)
     if failed:
         print(f"   failed symbols: {', '.join(failed)}", file=sys.stderr)
 
     index = {
         "generated_at": datetime.now().isoformat(), "date": TODAY,
         "total": len(results), "failed": len(failed),
+        "runtime_seconds": runtime_seconds,
+        "concurrency": CONCURRENCY,
         "symbols": list(results.keys()), "failed_symbols": failed,
         "market_scores": results
     }

@@ -28,5 +28,8 @@ python3 fetch_yfinance.py
 echo "$LOG_PREFIX Running fetch_unified.py"
 python3 fetch_unified.py
 
+echo "$LOG_PREFIX Running build_feature_dataset.py"
+python3 build_feature_dataset.py
+
 echo "$LOG_PREFIX ===== $(date -u '+%Y-%m-%d %H:%M:%S UTC') DONE ====="
 echo ""
